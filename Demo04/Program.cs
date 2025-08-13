@@ -58,39 +58,55 @@ namespace Demo04
 
             #endregion
 
-            //Dictionary
-            Dictionary<string, long> phoneBook = new Dictionary<string, long>();  // capacity here is zero
+            #region Generic: Dictionary
+            ////Dictionary
+            //Dictionary<string, long> phoneBook = new Dictionary<string, long>();  // capacity here is zero
 
-            phoneBook.Add("Hussein", 1111);
-            phoneBook.Add("Mahmoud", 2222);
-            phoneBook.Add("Foaud", 3333);
-            phoneBook.Add("Esraa", 4444);
+            //phoneBook.Add("Hussein", 1111);
+            //phoneBook.Add("Mahmoud", 2222);
+            //phoneBook.Add("Foaud", 3333);
+            //phoneBook.Add("Esraa", 4444);
 
-            foreach (KeyValuePair<string, long> item in phoneBook)
+            //foreach (KeyValuePair<string, long> item in phoneBook)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //Console.WriteLine("===========================");
+            //Console.WriteLine();
+
+            //Console.WriteLine(phoneBook.Remove("Foaud")); //True: means suceessfuly removed
+            //Console.WriteLine(phoneBook.Remove("Bolla")); //False: means failed to remove
+
+            //Console.WriteLine(phoneBook.Remove("Esraa", out long result)); //True
+            //Console.WriteLine(result); //4444
+
+            //Console.WriteLine(phoneBook.Remove("Metwalli", out  result)); //False
+            //Console.WriteLine(result); //0
+
+            //Console.WriteLine("===========================");
+            //Console.WriteLine();
+
+            //Console.WriteLine(phoneBook.TryAdd("Hussein2", 5678)); //True
+            //Console.WriteLine(phoneBook.TryGetValue("Ahmed", out result)); //False
+            //Console.WriteLine(result); //0 
+            #endregion
+
+            HashSet<string> Names = new HashSet<string>();
+            Names.Add("Hussein");
+            Names.Add("Mahmoud");
+            Names.Add("Fouad");
+            Names.Add("Manar");
+            Names.Add("Manar"); //ignored
+
+
+            foreach (var item in Names)
             {
                 Console.WriteLine(item);
             }
 
-            Console.WriteLine("===========================");
-            Console.WriteLine();
-
-            Console.WriteLine(phoneBook.Remove("Foaud")); //True: means suceessfuly removed
-            Console.WriteLine(phoneBook.Remove("Bolla")); //False: means failed to remove
-
-            Console.WriteLine(phoneBook.Remove("Esraa", out long result)); //True
-            Console.WriteLine(result); //4444
-
-            Console.WriteLine(phoneBook.Remove("Metwalli", out  result)); //False
-            Console.WriteLine(result); //0
-
-            Console.WriteLine("===========================");
-            Console.WriteLine();
-
-            Console.WriteLine(phoneBook.TryAdd("Hussein2", 5678)); //True
-            Console.WriteLine(phoneBook.TryGetValue("Ahmed", out result)); //False
-            Console.WriteLine(result); //0
-
-
+            Console.WriteLine(Names.Capacity); //7
+            Console.WriteLine(Names.Count); //4
 
 
         }

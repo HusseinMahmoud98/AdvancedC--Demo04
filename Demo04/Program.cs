@@ -92,6 +92,7 @@ namespace Demo04
             //Console.WriteLine(result); //0 
             #endregion
 
+            #region HashSet
             HashSet<string> Names = new HashSet<string>();
             Names.Add("Hussein");
             Names.Add("Mahmoud");
@@ -108,6 +109,7 @@ namespace Demo04
             Console.WriteLine(Names.Capacity); //7
             Console.WriteLine(Names.Count); //4
 
+            #endregion
 
         }
     }
